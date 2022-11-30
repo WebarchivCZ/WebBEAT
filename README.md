@@ -15,19 +15,19 @@
 - prepare path for this project
 - clone this project and setup cron with desired intensity of checking - recommended eg. once for month
 
-'''sh
+```
 cd /opt/
 git clone https://github.com/JanMeritus/WebBEAT.git
 cd WebBEAT
 python3 -m pip check    # check main dependencies status
 python3 -m pip install  # install dependencies 
-'''
+```
 
 ## Basic usage
 
 - script run could be specified by several options detailed in help section
 
-'''sh
+```
 $ python3 WebBEAT.py --help
 usage: WebBEAT.py [-h] [-e ENDPOINT] [-s SEEDS] [-p PAUSE] [-t TIMEOUTMARGIN] [-r MAXREDIRECTS] [--whois_c] [--no-whois]
 
@@ -45,7 +45,7 @@ optional arguments:
                         set Max Redirects constraint in live requests, def. 12;
   --whois_c             Activate WHOIS checking procedure, def. activated. Use as parameter; --whois_c
   --no-whois            Desactivate WHOIS checking procedure, def. activated. Use as parameter; --no-whois
-'''
+```
 
 ## Operation
 - endpoint for data export
@@ -63,11 +63,11 @@ optional arguments:
 -- here implemented specifically for czech  CZ.NIC provider, for international just switch functionality of tweaked library - need to create bigger pauses - eg. 120 seconds
 - create respective crontab
 
-'''sh
+```
 #crontab -e
 # no-whois example
 0 1 1 * *  python3 /opt/webbeat/WebBEAT.py -p 5 --no-whois  -e http://121.0.0.1/api/v2/ >> WebBEAT-date +\%Y\%m\%d\%H\%M\%S.log
 # whois option example
 0 1 1 * *  python3 /opt/webbeat/WebBEAT.py -p 120 --whois_c  -e http://121.0.0.1/api/v2/ >> WebBEAT-date +\%Y\%m\%d\%H\%M\%S.log
 
-'''
+```
