@@ -1,12 +1,12 @@
 # WebBEAT
 
-- backend script for checking live and extinct websites
+- backend program for checking live and extinct websites
 
 
 ## Prerequisities
 
 - Sys - could be run on Win, IOS or any other env, Linux server is recommended
-- python 3.9
+- Python 3.9+
 - pip + dependencies listed in 
 - service user is recommended - eg. 'webbeat'
 
@@ -71,3 +71,11 @@ optional arguments:
 0 1 1 * *  python3 /opt/webbeat/WebBEAT.py -p 120 --whois_c  -e http://121.0.0.1/api/v2/ >> WebBEAT-date +\%Y\%m\%d\%H\%M\%S.log
 
 ```
+
+## Dedication
+
+For Webarchive of the National Library of the Czech Republic
+
+### Supported by
+
+_Realizováno v rámci institucionálního výzkumu Národní knihovny České republiky financovaného Ministerstvem kultury ČR v rámci Dlouhodobého koncepčního rozvoje výzkumné organizace._
